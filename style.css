@@ -1,0 +1,190 @@
+/* 1. Global Styles and Variables */
+:root {
+    --bg-color: #ffffff;
+    --text-color: #333333;
+    --primary-color: #007bff;
+    --header-bg: #f4f4f4;
+}
+
+/* This class is added by JS to switch themes */
+.dark-mode {
+    --bg-color: #121212;
+    --text-color: #e0e0e0;
+    --primary-color: #bb86fc;
+    --header-bg: #1f1f1f;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background 0.3s, color 0.3s; /* Smooth transition */
+}
+
+/* 2. Header & Nav */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: var(--header-bg);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    padding: 0;
+    margin: 0;
+    display: inline-flex; /* Keeps list next to button */
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: bold;
+}
+
+#theme-toggle {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    margin-left: 15px;
+}
+
+/* 3. Hero Section */
+.hero {
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.btn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+/* 4. Sections & Footer */
+.container {
+    padding: 40px 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+    border-top: 1px solid #ccc;
+}
+
+.btn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    
+    /* ADD THESE TWO LINES */
+    text-decoration: none;  /* Removes the underline from the link */
+    display: inline-block;  /* Ensures padding and margins work correctly */
+}
+
+
+/* Education Section Styles */
+.education-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Space between items */
+}
+
+.edu-item {
+    display: flex;
+    justify-content: space-between; /* Pushes date to the right */
+    align-items: flex-start;
+    border-bottom: 1px solid #ddd; /* Adds a line separator */
+    padding-bottom: 15px;
+}
+
+.edu-item:last-child {
+    border-bottom: none; /* Removes line from the last item */
+}
+
+.edu-info h3 {
+    margin: 0 0 5px 0;
+    font-size: 1.1rem;
+    color: var(--primary-color);
+}
+
+.edu-info p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: var(--text-color);
+}
+
+.edu-date {
+    font-weight: bold;
+    white-space: nowrap; /* Prevents date from breaking into two lines */
+    margin-left: 20px;
+}
+
+
+/* Skills Section Styles */
+.skill-category {
+    margin-bottom: 30px; /* Adds space between the categories */
+}
+
+.skill-category h3 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    color: var(--text-color);
+    opacity: 0.9;
+}
+
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap; /* Allows tags to flow to the next line */
+    gap: 10px;       /* Space between the tags */
+}
+
+.skill {
+    background-color: var(--header-bg); 
+    color: var(--text-color);
+    border: 1px solid var(--primary-color);
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    cursor: default;
+    transition: all 0.2s ease;
+}
+
+.skill:hover {
+    background-color: var(--primary-color);
+    color: white;
+    transform: translateY(-3px);
+}
+
+/* Contact Section Styles */
+#contact {
+    text-align: center; /* Centers the text and button */
+    margin-bottom: 50px; /* Adds space before the footer */
+}
+
+#contact p {
+    margin-bottom: 30px; /* Space between the text and the button */
+    font-size: 1.1rem;
+    color: var(--text-color);
+}
