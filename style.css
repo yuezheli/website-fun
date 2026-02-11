@@ -6,7 +6,7 @@
     --header-bg: #f4f4f4;
 }
 
-/* This class is added by JS to switch themes */
+/* Dark Mode Theme */
 .dark-mode {
     --bg-color: #121212;
     --text-color: #e0e0e0;
@@ -19,7 +19,7 @@ body {
     font-family: Arial, sans-serif;
     background-color: var(--bg-color);
     color: var(--text-color);
-    transition: background 0.3s, color 0.3s; /* Smooth transition */
+    transition: background 0.3s, color 0.3s;
 }
 
 /* 2. Header & Nav */
@@ -33,11 +33,10 @@ header {
 
 nav ul {
     list-style: none;
-    display: flex;
+    display: inline-flex;
     gap: 15px;
     padding: 0;
     margin: 0;
-    display: inline-flex; /* Keeps list next to button */
 }
 
 nav a {
@@ -54,17 +53,7 @@ nav a {
     margin-left: 15px;
 }
 
-/* 3. Hero Section */
-.hero {
-    text-align: center;
-    padding: 100px 20px;
-}
-
-.hero h1 {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
-}
-
+/* 3. Buttons (Consolidated) */
 .btn {
     background-color: var(--primary-color);
     color: white;
@@ -73,157 +62,16 @@ nav a {
     border-radius: 5px;
     cursor: pointer;
     font-size: 1rem;
+    text-decoration: none;  /* Essential for links */
+    display: inline-block;
+    transition: opacity 0.2s;
 }
 
-/* 4. Sections & Footer */
-.container {
-    padding: 40px 20px;
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-footer {
-    text-align: center;
-    padding: 20px;
-    margin-top: 50px;
-    border-top: 1px solid #ccc;
-}
-
-.btn {
-    background-color: var(--primary-color);
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1rem;
-    
-    /* ADD THESE TWO LINES */
-    text-decoration: none;  /* Removes the underline from the link */
-    display: inline-block;  /* Ensures padding and margins work correctly */
-}
-
-
-/* Education Section Styles */
-.education-list {
-    display: flex;
-    flex-direction: column;
-    gap: 20px; /* Space between items */
-}
-
-.edu-item {
-    display: flex;
-    justify-content: space-between; /* Pushes date to the right */
-    align-items: flex-start;
-    border-bottom: 1px solid #ddd; /* Adds a line separator */
-    padding-bottom: 15px;
-}
-
-.edu-item:last-child {
-    border-bottom: none; /* Removes line from the last item */
-}
-
-.edu-info h3 {
-    margin: 0 0 5px 0;
-    font-size: 1.1rem;
-    color: var(--primary-color);
-}
-
-.edu-info p {
-    margin: 0;
-    font-size: 0.95rem;
-    color: var(--text-color);
-}
-
-.edu-date {
-    font-weight: bold;
-    white-space: nowrap; /* Prevents date from breaking into two lines */
-    margin-left: 20px;
-}
-
-
-/* Skills Section Styles */
-.skill-category {
-    margin-bottom: 30px; /* Adds space between the categories */
-}
-
-.skill-category h3 {
-    font-size: 1.1rem;
-    margin-bottom: 10px;
-    color: var(--text-color);
+.btn:hover {
     opacity: 0.9;
 }
 
-.skill-tags {
-    display: flex;
-    flex-wrap: wrap; /* Allows tags to flow to the next line */
-    gap: 10px;       /* Space between the tags */
-}
-
-.skill {
-    background-color: transparent; 
-    color: var(--text-color);
-    border: 1px solid var(--primary-color);
-    padding: 8px 16px;
-    border-radius: 20px;
-    font-size: 0.9rem;
-    cursor: default;
-    transition: all 0.2s ease;
-}
-
-.skill:hover {
-    background-color: var(--primary-color);
-    color: white;
-    transform: translateY(-3px);
-}
-
-/* Contact Section Styles */
-#contact {
-    text-align: center; /* Centers the text and button */
-    margin-bottom: 50px; /* Adds space before the footer */
-}
-
-#contact p {
-    margin-bottom: 30px; /* Space between the text and the button */
-    font-size: 1.1rem;
-    color: var(--text-color);
-}
-
-
-/* Publications List Styles */
-.edu-info {
-    padding-right: 20px; /* Adds space between text and date */
-    flex: 1; /* Ensures text takes up available space */
-}
-
-.edu-date {
-    flex-shrink: 0; /* Prevents the date from getting squashed */
-    text-align: right;
-}
-
-/* Code Examples Link Style */
-.project-link {
-    color: var(--primary-color);
-    font-weight: bold;
-    text-decoration: none;
-    white-space: nowrap; /* Prevents text from wrapping */
-    margin-left: 20px;
-    align-self: center; /* Vertically centers the link */
-    font-size: 0.9rem;
-    border: 1px solid var(--primary-color); /* Optional: adds a thin border */
-    padding: 5px 10px;
-    border-radius: 5px;
-    transition: background 0.2s;
-}
-
-.project-link:hover {
-    background-color: var(--primary-color);
-    color: white;
-}
-
-
-
-/* Hero Section Layout */
+/* 4. Hero Section (New Layout) */
 .hero {
     padding: 80px 20px;
     display: flex;
@@ -235,12 +83,11 @@ footer {
     display: flex;
     max-width: 1000px;
     align-items: center;
-    gap: 50px; /* Space between text and image */
+    gap: 50px;
 }
 
-/* 1. Text Styling */
 .hero-text {
-    flex: 1; /* Takes up available space */
+    flex: 1;
 }
 
 .hero-text h1 {
@@ -263,7 +110,12 @@ footer {
     color: var(--text-color);
 }
 
-/* 2. Image Styling */
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
 .hero-image {
     flex: 1;
     display: flex;
@@ -271,16 +123,147 @@ footer {
 }
 
 .hero-image img {
-    width: 300px;        /* Size of the circle */
-    height: 300px;       /* Must match width to be a perfect circle */
-    object-fit: cover;   /* Ensures photo doesn't stretch/squish */
-    border-radius: 50%;  /* Makes it a circle */
-    border: 5px solid var(--primary-color); /* Optional: Adds a colored ring */
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2); /* Adds a nice shadow */
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 50%; /* This makes it a circle */
+    border: 5px solid var(--primary-color);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 }
 
-/* 3. Mobile Responsiveness */
-/* When screen is small (phone), stack them vertically */
+/* 5. General Layout & Footer */
+.container {
+    padding: 40px 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+    border-top: 1px solid #ccc;
+}
+
+/* 6. Education, Employment & Lists */
+.education-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.edu-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 15px;
+}
+
+.edu-item:last-child {
+    border-bottom: none;
+}
+
+.edu-info {
+    padding-right: 20px;
+    flex: 1;
+}
+
+.edu-info h3 {
+    margin: 0 0 5px 0;
+    font-size: 1.1rem;
+    color: var(--primary-color);
+}
+
+.edu-info p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: var(--text-color);
+}
+
+.edu-date {
+    font-weight: bold;
+    white-space: nowrap;
+    margin-left: 20px;
+    flex-shrink: 0;
+    text-align: right;
+}
+
+/* 7. Skills & Research Interests */
+.skill-category {
+    margin-bottom: 30px;
+}
+
+.skill-category h3 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    color: var(--text-color);
+    opacity: 0.9;
+}
+
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.skill {
+    background-color: transparent;
+    color: var(--text-color);
+    border: 1px solid var(--primary-color);
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    cursor: default;
+    transition: all 0.2s ease;
+}
+
+.skill:hover {
+    background-color: var(--primary-color);
+    color: white;
+    transform: translateY(-3px);
+}
+
+/* 8. Code Examples & Projects */
+.project-link {
+    color: var(--primary-color);
+    font-weight: bold;
+    text-decoration: none;
+    white-space: nowrap;
+    margin-left: 20px;
+    align-self: center;
+    font-size: 0.9rem;
+    border: 1px solid var(--primary-color);
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background 0.2s;
+}
+
+.project-link:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* 9. Contact Section */
+#contact {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+#contact p {
+    margin-bottom: 30px;
+    font-size: 1.1rem;
+    color: var(--text-color);
+}
+
+.contact-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* 10. Mobile Responsiveness */
 @media (max-width: 768px) {
     .hero-container {
         flex-direction: column-reverse; /* Puts image on top on mobile */
