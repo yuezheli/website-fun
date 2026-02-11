@@ -221,3 +221,78 @@ footer {
     color: white;
 }
 
+
+
+/* Hero Section Layout */
+.hero {
+    padding: 80px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-container {
+    display: flex;
+    max-width: 1000px;
+    align-items: center;
+    gap: 50px; /* Space between text and image */
+}
+
+/* 1. Text Styling */
+.hero-text {
+    flex: 1; /* Takes up available space */
+}
+
+.hero-text h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+}
+
+.hero-text h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: var(--text-color);
+    opacity: 0.8;
+}
+
+.hero-text p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: var(--text-color);
+}
+
+/* 2. Image Styling */
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-image img {
+    width: 300px;        /* Size of the circle */
+    height: 300px;       /* Must match width to be a perfect circle */
+    object-fit: cover;   /* Ensures photo doesn't stretch/squish */
+    border-radius: 50%;  /* Makes it a circle */
+    border: 5px solid var(--primary-color); /* Optional: Adds a colored ring */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2); /* Adds a nice shadow */
+}
+
+/* 3. Mobile Responsiveness */
+/* When screen is small (phone), stack them vertically */
+@media (max-width: 768px) {
+    .hero-container {
+        flex-direction: column-reverse; /* Puts image on top on mobile */
+        text-align: center;
+    }
+    
+    .hero-image img {
+        width: 200px;
+        height: 200px;
+    }
+    
+    .hero-buttons {
+        justify-content: center;
+    }
+}
